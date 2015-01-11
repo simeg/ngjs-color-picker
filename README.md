@@ -23,15 +23,21 @@ Clone or [download](https://github.com/simeg/ngjs-color-picker/archive/master.zi
 
 **JS**
 
-`<script type="text/javascript" src="js/ngjs-color-picker"></script>`
+```
+<script type="text/javascript" src="js/ngjs-color-picker"></script>`
+```
 
 **CSS**
 
-`<link rel="stylesheet" href="css/ngjs-color-picker.css" />`
+```
+<link rel="stylesheet" href="css/ngjs-color-picker.css" />
+```
 
 Inject the module as a dependency in your app:
 
-`angular.module('myApp', ['ngjsColorPicker']);`
+```
+angular.module('myApp', ['ngjsColorPicker']);
+```
 
 # Usage and documentation
 For documentation, examples and usage see the [GitHub pages for this repository](http://simeg.github.io/ngjs-color-picker).
