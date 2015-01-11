@@ -24,7 +24,7 @@ Clone or [download](https://github.com/simeg/ngjs-color-picker/archive/master.zi
 **JS**
 
 ```
-<script type="text/javascript" src="js/ngjs-color-picker"></script>`
+<script type="text/javascript" src="js/ngjs-color-picker"></script>
 ```
 
 **CSS**
