@@ -1,0 +1,158 @@
+'use strict';
+
+angular.module('angularColorPicker', [])
+    .directive('angularColorPicker', function() {
+        var defaultColors =  [
+            '#7bd148',
+            '#5484ed',
+            '#a4bdfc',
+            '#46d6db',
+            '#7ae7bf',
+            '#51b749',
+            '#fbd75b',
+            '#ffb878',
+            '#ff887c',
+            '#dc2127',
+            '#dbadff',
+            '#e1e1e1'
+        ];
+        return {
+            scope: {
+                selected: '=',
+                customColors: '=',
+                options: '=',
+                gradient: '='
+            },
+            restrict: 'AE',
+            template: '<ul><li ng-repeat="color in colors"\
+                        ng-class="{\
+                        selected: (color===selected),\
+                        hRDF: $first&&hzRound,\
+                        hRDL: $last&&hzRound,\
+                        vRDF: $first&&vertRound,\
+                        vRDL: $last&&vertRound,\
+                        tlRound: $first&&columnRound,\
+                        trRound: $index==(options.columns-1)&&columnRound,\
+                        brRound: $last&&columnRound,\
+                        blRound: $index==(colors.length-options.columns)&&columnRound\
+                        }"\
+                        ng-click="pick(color)"\
+                        style="background-color:{{color}};"\
+                        ng-style="css">\
+                        </li></ul>',
+            link: function (scope, element, attr) {
+
+                // Priorities
+                // 1. Custom colors
+                // 2. Gradient
+                // 3. Random colors
+                // 4. Columns
+                // 5. Vert/Horizontal
+                // Last: Default colors (default)
+                // TODO: If gradient & columns - no borders if uneven column
+                // TODO: Fix priorities
+                // TODO: Divide prios in colors/functions
+                // TODO: Make horizontal default (line 67)
+                // TODO: Make module work!!!
+
+                scope.options = {};
+                scope.options.horizontal = true;
+                //scope.options.size = 30;
+                scope.options.roundCorners = true;
+                //scope.options.columns = 4;
+
+                // All possible options and their default values
+                //scope.options = scope.options || {};
+                scope.options.size = scope.options.size || 20;
+                scope.options.columns = scope.options.columns || 0;
+                scope.options.horizontal = +(scope.options.horizontal);
+                scope.options.randomColors = scope.options.randomColors || 0;
+                scope.options.roundCorners = scope.options.roundCorners;
+                scope.colors = scope.customColors || defaultColors;
+                //scope.gradient = scope.gradient || false; // Not working - giving error
+
+                // Pick a color from the view
+                scope.pick = function (color) {
+                    scope.selected = color;
+                };
+
+                // CSS
+                // Contains all css styles for <li>
+                scope.css = {};
+                // Set bar to horizontal/vertical
+                scope.css.display = (scope.options.horizontal ? 'inline-block' : 'block');
+                // Set size of squares
+                scope.css.width = scope.css.height = scope.options.size;
+                // If columns
+                if(scope.options.columns > 0){
+                    element.children().css('width', scope.options.columns*scope.css.width);
+                    element.children().css('height', scope.options.size*(scope.colors.length/scope.options.columns));
+                    scope.css.float = 'left';
+                }
+
+                // Set if rounded corners (horizontal or vertical)
+                scope.hzRound = (scope.options.horizontal && scope.options.roundCorners && scope.options.columns === 0);
+                scope.vertRound = (!scope.options.horizontal && scope.options.roundCorners && scope.options.columns === 0);
+                // Set if rounded corners (columns)
+                var isOkColumn = (scope.colors.length%scope.options.columns === 0);
+                scope.columnRound = (scope.options.columns && scope.options.roundCorners && isOkColumn);
+
+                // Generate random colors
+                if(scope.options.randomColors >0 && !scope.gradient){
+                    scope.colors = [];
+                    var count = scope.options.randomColors;
+                    while(count !== 0){
+                        scope.colors.push(_randomHexColor());
+                        count--;
+                    }
+                }
+
+                // Generate random hex color
+                function _randomHexColor(){
+                    return ("#" + (Math.random().toString(16) + '000000').slice(2, 8));
+                }
+
+                // Generate gradient colors
+                // Example: { count:10, start:'#DFCA4A', step:1 }
+                // count (default 5): how many boxes (integer)
+                // start: starting color (#08a35c || 08a35c) (must be full hex (6 characters))
+                // step (default 1): If you pass in 100 for percent it will make your color pure white.
+                // If you pass in 0 for percent, nothing will happen.
+                // If you pass in 1 for percent it will add 3 shades to all colors (2.55 shades per 1%, rounded).
+                if(scope.gradient){
+                    var validHex = _formatToHex(scope.gradient.start);
+                    var isOkHex = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(validHex);
+                    if(isOkHex){
+                        scope.colors = [];
+                        count = scope.gradient.count || 10;
+                        var interval = scope.gradient.step || 1;
+                        while(count !== 0){
+                            scope.colors.push(_shadeColor(scope.colors.length === 0 ? validHex : scope.colors[scope.colors.length-1], interval));
+                            interval+=scope.gradient.step;
+                            count--;
+                            // If black or white - stop generating more colors
+                            if(scope.colors[scope.colors.length-1].toLowerCase() === '#ffffff' || scope.colors[scope.colors.length-1] === '#000000')
+                                count = 0;
+                        }
+                    }
+                }
+
+                function _formatToHex(hex){
+                    var index = +(hex.charAt(0) === '#');
+                    return '#' + hex.substr(index).toLowerCase();
+                }
+
+                function _shadeColor(color, percent) {
+                    var num = parseInt(color.slice(1),16), amt = Math.round(2.55 * percent), R = (num >> 16) + amt, G = (num >> 8 & 0x00FF) + amt, B = (num & 0x0000FF) + amt;
+                    return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
+                }
+
+                //console.log(scope.colors);
+
+                // Set selection to chosen color or first color
+                scope.selected = scope.selected || scope.colors[0];
+
+            }
+        };
+
+    });

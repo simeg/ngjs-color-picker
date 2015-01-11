@@ -1,0 +1,72 @@
+angular-color-picker ul {
+    padding: 0;
+    outline: none;
+    list-style-type: none;
+    margin: 0 auto 0 auto;
+}
+
+angular-color-picker li {
+    /*float: left;*/
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    outline: none;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.3s ease-in-out;
+}
+
+angular-color-picker li:hover {
+    /*background-color: rgba(87, 87, 87, 1) !important;*/
+    /*background-color: rgba(91, 91, 91, 0.51) !important;*/
+}
+
+angular-color-picker li {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fc/Translucent_50_percent_white.png)
+}
+angular-color-picker li:hover{
+    background-image:none;
+}
+
+angular-color-picker li.selected {
+    /*border: 1px solid #4B4B4B;*/
+    background-image:none;
+    /*border: 2px solid transparent;*/
+}
+
+/*Horizontal round corners, first*/
+angular-color-picker li.hRDF {
+    border-radius: 5px 0 0 5px;
+}
+
+/*Horizontal round corners, last*/
+angular-color-picker li.hRDL {
+    border-radius: 0 5px 5px 0;
+}
+
+/*Vertical round corners, first*/
+angular-color-picker li.vRDF {
+    border-radius: 5px 5px 0 0;
+}
+/*Vertical round corners, last*/
+angular-color-picker li.vRDL {
+    border-radius: 0 0 5px 5px;
+}
+
+angular-color-picker li.tlRound {
+    border-radius: 5px 0 0 0;
+}
+
+angular-color-picker li.trRound {
+    border-radius: 0 5px 0 0;
+}
+
+angular-color-picker li.brRound {
+    border-radius: 0 0 5px 0;
+}
+
+angular-color-picker li.blRound {
+    border-radius: 0 0 0 5px;
+}
