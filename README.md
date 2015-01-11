@@ -9,7 +9,7 @@ A small directive which essentially is a color picker but with a few extra funct
 - Generate random colors
 - Generate gradient colors
 
-# Demo:
+# Demo
 - [Demo](http://simeg.github.io/ngjs-color-picker)
 - [Plunker](http://embed.plnkr.co/INXf3efkYeP1gWaF9SId/preview) (Note: All functions are not working properly on Plunker)
 
@@ -33,14 +33,14 @@ Clone or [download](https://github.com/simeg/ngjs-color-picker/archive/master.zi
 <link rel="stylesheet" href="css/ngjs-color-picker.css" />
 ```
 
-Inject the module as a dependency in your app:
+Inject the directive as a dependency in your app:
 
 ```
 angular.module('myApp', ['ngjsColorPicker']);
 ```
 
 # Usage and documentation
-For documentation, examples and usage see the [GitHub pages for this repository](http://simeg.github.io/ngjs-color-picker).
+For documentation, examples and usage see the [GitHub page for this repository](http://simeg.github.io/ngjs-color-picker).
 
 # License
 The MIT License (MIT)
