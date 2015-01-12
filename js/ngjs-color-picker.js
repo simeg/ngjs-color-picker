@@ -119,6 +119,7 @@ angular.module('ngjsColorPicker', [])
           if(scope.gradient && !scope.customColors && !scope.options.randomColors){
             var validHex = _formatToHex(scope.gradient.start);
             var isOkHex = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(validHex);
+            isOkHex = true;
             if(isOkHex){
               scope.colors = [];
               count = scope.gradient.count || 10;
