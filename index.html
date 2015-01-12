@@ -1,133 +1,41 @@
 <!doctype html>
-<html>
-  <head>
+<html ng-app="exampleApp">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>ngjs-color-picker by simeg</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>ngjs-color-picker</h1>
-        <p>A color picker with a few extra functions for AngularJS</p>
+</head>
+<body>
+<div class="wrapper">
+    <div ng-view></div>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular-route.js"></script>
+<script type="text/javascript" src="https://rawgit.com/simeg/ngjs-color-picker/master/js/ngjs-color-picker.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+<script type="text/javascript" src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
 
-        <p class="view"><a href="https://github.com/simeg/ngjs-color-picker">View the Project on GitHub <small>simeg/ngjs-color-picker</small></a></p>
+<script type="text/javascript" src="javascripts/app.js"></script>
+<script type="text/javascript" src="javascripts/main/main.module.js"></script>
 
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-58469115-1");
+        pageTracker._trackPageview();
+    } catch(err) {}
+</script>
 
-        <ul>
-          <li><a href="https://github.com/simeg/ngjs-color-picker/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/simeg/ngjs-color-picker/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/simeg/ngjs-color-picker">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a id="ngjs-color-picker" class="anchor" href="#ngjs-color-picker" aria-hidden="true"><span class="octicon octicon-link"></span></a>ngjs-color-picker</h1>
-
-<p>A small directive which essentially is a color picker but with a few extra functions - for AngularJS. Based on <a href="https://github.com/joujiahe/ng-color-picker">ng-color-picker</a>.</p>
-
-<p><strong>Requirements</strong>: Angular 1.2+</p>
-
-<h1>
-<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h1>
-
-<ul>
-<li>Customize the appearance of the color picker</li>
-<li>Generate random colors</li>
-<li>Generate gradient colors</li>
-</ul>
-
-<h1>
-<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h1>
-
-<ul>
-<li><a href="http://simeg.github.io/ngjs-color-picker">Demo</a></li>
-<li>
-<a href="http://embed.plnkr.co/INXf3efkYeP1gWaF9SId/preview">Plunker</a> (Note: All functions are not working properly on Plunker)</li>
-</ul>
-
-<h1>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
-
-<h4>
-<a id="via-bower" class="anchor" href="#via-bower" aria-hidden="true"><span class="octicon octicon-link"></span></a>via bower:</h4>
-
-<pre><code>$ bower install --save ngjs-color-picker
-</code></pre>
-
-<h4>
-<a id="manually" class="anchor" href="#manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>manually:</h4>
-
-<p>Clone or <a href="https://github.com/simeg/ngjs-color-picker/archive/master.zip">download</a> the repository and include the <code>js</code> and <code>css</code> files in your app.</p>
-
-<p><strong>JS</strong></p>
-
-<pre><code>&lt;script type="text/javascript" src="js/ngjs-color-picker"&gt;&lt;/script&gt;`
-</code></pre>
-
-<p><strong>CSS</strong></p>
-
-<pre><code>&lt;link rel="stylesheet" href="css/ngjs-color-picker.css" /&gt;
-</code></pre>
-
-<p>Inject the directive as a dependency in your app:</p>
-
-<pre><code>angular.module('myApp', ['ngjsColorPicker']);
-</code></pre>
-
-<h1>
-<a id="usage-and-documentation" class="anchor" href="#usage-and-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage and documentation</h1>
-
-<p>For documentation, examples and usage see the <a href="http://simeg.github.io/ngjs-color-picker">GitHub page for this repository</a>.</p>
-
-<h1>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
-
-<p>The MIT License (MIT)</p>
-
-<p>Copyright (c) 2015 Simon Egersand</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/simeg">simeg</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-58469115-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-  </body>
+</body>
 </html>

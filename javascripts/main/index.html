@@ -1,0 +1,124 @@
+<header>
+    <h1>ngjs-color-picker</h1>
+    <p>A color picker with a few extra functions - for AngularJS</p>
+
+    <!--<ngjs-color-picker options="options" selected="selectedColor"></ngjs-color-picker>-->
+    <!--{{selectedColor}}-->
+
+    <p class="view"><a href="https://github.com/simeg/ngjs-color-picker">View the Project on GitHub <small>simeg/ngjs-color-picker</small></a></p>
+
+    <ul>
+        <li><a href="https://github.com/simeg/ngjs-color-picker/zipball/master">Download <strong>ZIP File</strong></a></li>
+        <li><a href="https://github.com/simeg/ngjs-color-picker/tarball/master">Download <strong>TAR Ball</strong></a></li>
+        <li><a href="https://github.com/simeg/ngjs-color-picker">View On <strong>GitHub</strong></a></li>
+    </ul>
+</header>
+<section>
+    <h1>
+        <a id="ngjs-color-picker" class="anchor" href="#ngjs-color-picker" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is ngjs-color-picker?</h1>
+
+    <p>A small directive which essentially is a color picker but with a few extra functions - for AngularJS.</p>
+
+    <p><b>On this page you can see examples, documentation and usage of the directive.</b></p>
+
+    <hr/>
+    <h1>Insert table with all options</h1>
+    <hr/>
+
+    <h2>Basic usage example</h2>
+    <ngjs-color-picker selected="selected"></ngjs-color-picker>
+    <input type="text" ng-model="selected">
+    <br><br>
+    <h3>Code</h3>
+    <div hljs>
+<ngjs-color-picker></ngjs-color-picker></div>
+
+    <hr/>
+
+    <h2>Example with larger size and round corners</h2>
+    <ngjs-color-picker selected="selectedColor" options="customOptions"></ngjs-color-picker>
+    <input type="text" ng-model="selectedColor">
+    <br><br>
+    <h3>Code</h3>
+    <div hljs>
+// HTML
+<ngjs-color-picker selected="selectedColor" options="customOptions"></ngjs-color-picker>
+
+// JS
+$scope.customOptions = {
+    size: 30,
+    roundCorners: true
+}</div>
+
+    <hr/>
+
+    <h2>Example with random colors</h2>
+    <ngjs-color-picker selected="selectedColorRandom" options="optionsRandom"></ngjs-color-picker>
+    <input type="text" ng-model="selectedColorRandom">
+    <br><br>
+    <h3>Code</h3>
+    <div hljs>
+// HTML
+<ngjs-color-picker selected="selectedColor" options="optionsRandom"></ngjs-color-picker>
+
+// JS
+$scope.optionsRandom = {
+    randomColors: 10
+}</div>
+
+    <hr/>
+
+    <h2>Example with gradient</h2>
+    <ngjs-color-picker selected="selectedColorGradient" options="optionsGradient"></ngjs-color-picker>
+    <input type="text" ng-model="selectedColorGradient">
+    <br><br>
+    <h3>Code</h3>
+    <div hljs>
+// HTML
+<ngjs-color-picker selected="selectedColor" gradient="optionsGradient"></ngjs-color-picker>
+
+// JS
+$scope.optionsGradient = {
+    start: '#BA693E',
+    count: 10,
+    step: 1
+}</div>
+
+    <hr/>
+
+    <h2>Example with vertical color picker</h2>
+    <ngjs-color-picker selected="selectedColorVert" options="optionsVertical"></ngjs-color-picker>
+    <input type="text" ng-model="selectedColorVert">
+    <br><br>
+    <h3>Code</h3>
+    <div hljs>
+// HTML
+<ngjs-color-picker selected="selectedColor" gradient="optionsVertical"></ngjs-color-picker>
+
+// JS
+$scope.optionsVertical = {
+    horizontal: false,
+    total: 5
+}</div>
+
+    <hr/>
+
+    <h2>Example with columns defined</h2>
+    <ngjs-color-picker selected="selectedColorColumn" options="optionsColumn"></ngjs-color-picker>
+    <input type="text" ng-model="selectedColorColumn">
+    <br><br>
+    <h3>Code</h3>
+    <div hljs>
+// HTML
+<ngjs-color-picker selected="selectedColor" gradient="optionsColumn"></ngjs-color-picker>
+
+// JS
+$scope.optionsColumn = {
+    columns: 5
+}</div>
+
+</section>
+<footer>
+    <p>This project is maintained by <a href="https://github.com/simeg">simeg</a></p>
+    <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+</footer>
