@@ -24,7 +24,7 @@ angular.module('ngjsColorPicker', [])
           gradient: '=?'
         },
         restrict: 'E',
-        template: '<ul><li ng-repeat="color in colors | limitTo: options.total"\
+        template: '<ul ng-style="ul-css"><li ng-repeat="color in colors | limitTo: options.total"\
                         ng-class="{\
                         selected: (color===selected),\
                         hRDF: $first&&hzRound,\
@@ -68,8 +68,10 @@ angular.module('ngjsColorPicker', [])
           // TODO: Validation
           // What type is needed?
 
-          // Contains all css styles for <li>
+          // Contains all css styles for all <li> elements
           scope.css = {};
+          // Contains all css styles for the <ul> element
+          scope.ulCss = {};
           // Set bar to horizontal/vertical
           scope.css.display = (scope.options.horizontal ? 'inline-block' : 'block');
           // Set size of squares
@@ -79,12 +81,14 @@ angular.module('ngjsColorPicker', [])
           // - Horizontal or vertical has no effect if columns
           // TODO: Add support for setting rows instead of just columns
           if(scope.options.columns > 0){
-              var indexOfPx = scope.css.width.indexOf('p');
-              //element.children().css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
-              //element.children().css('height', scope.options.size*(scope.colors.length/scope.options.columns));
-              element.find('ul').css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
-              element.find('ul').css('height', scope.options.size*(scope.colors.length/scope.options.columns));
-              scope.css.cssFloat = 'left';
+            var indexOfPx = scope.css.width.indexOf('p');
+            //element.children().css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
+            //element.children().css('height', scope.options.size*(scope.colors.length/scope.options.columns));
+            //element.find('ul').css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
+            //element.find('ul').css('height', scope.options.size*(scope.colors.length/scope.options.columns));
+            scope.ulCss.width = scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx)));
+            scope.ulCss.height = scope.options.size*(scope.colors.length/scope.options.columns);
+            scope.css.cssFloat = 'left';
           }
 
           // Set if rounded corners (horizontal or vertical)
