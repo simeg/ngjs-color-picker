@@ -122,8 +122,8 @@ angular.module('ngjsColorPicker', [])
             isOkHex = true;
             if(isOkHex){
               scope.colors = [];
-              count = scope.gradient.count || 10;
-              var interval = scope.gradient.step || 1;
+              count = scope.gradient.hasOwnProperty('count')|| 10;
+              var interval = scope.gradient.hasOwnProperty('step') || 1;
               while(count !== 0){
                 scope.colors.push(_shadeColor(scope.colors.length === 0 ? validHex : scope.colors[scope.colors.length-1], interval));
                 interval+=scope.gradient.step;
