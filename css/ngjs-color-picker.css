@@ -9,20 +9,16 @@ ngjs-color-picker li {
   margin: 0;
   box-sizing:border-box;
   outline: none;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.3s ease-in-out;
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fc/Translucent_50_percent_white.png)
+  /*background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fc/Translucent_50_percent_white.png)*/
 }
 
 ngjs-color-picker li:hover{
-  background-image:none;
+  /*background-image:none;*/
 }
 
 ngjs-color-picker li.selected {
   background-image:none;
+  border: 1px solid #333;
 }
 
 /*Horizontal round corners, first*/
