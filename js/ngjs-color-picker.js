@@ -73,8 +73,7 @@ angular.module('ngjsColorPicker', [])
           // Set bar to horizontal/vertical
           scope.css.display = (scope.options.horizontal ? 'inline-block' : 'block');
           scope.css.cssFloat = 'left';
-          scope.css.styleFloat = 'left';
-          scope.css['cssFloat'] = 'right';
+          scope.css['cssFloat'] = 'left';
           // Set size of squares
           scope.css.width = scope.css.height = scope.options.size + 'px';
 
