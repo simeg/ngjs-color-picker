@@ -79,7 +79,8 @@ angular.module('ngjsColorPicker', [])
       // - Horizontal or vertical has no effect if columns
       // TODO: Add support for setting rows instead of just columns
       if(scope.options.columns > 0){
-        element.children().css('width', scope.options.columns*scope.css.width);
+        var indexOfPx = scope.css.width.indexOf('p');
+        element.children().css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
         element.children().css('height', scope.options.size*(scope.colors.length/scope.options.columns));
         scope.css.float = 'left';
       }
