@@ -25,21 +25,21 @@ angular.module('ngjsColorPicker', [])
         },
         restrict: 'E',
         template: '<ul><li ng-repeat="color in colors | limitTo: options.total"\
-    ng-class="{\
-      selected: (color===selected),\
-      hRDF: $first&&hzRound,\
-      hRDL: $last&&hzRound,\
-      vRDF: $first&&vertRound,\
-      vRDL: $last&&vertRound,\
-      tlRound: $first&&columnRound,\
-      trRound: $index==(options.columns-1)&&columnRound,\
-      brRound: $last&&columnRound,\
-      blRound: $index==(colors.length-options.columns)&&columnRound\
-    }"\
-    ng-click="pick(color)"\
-    style="background-color:{{color}};"\
-    ng-style="css">\
-    </li></ul>',
+                        ng-class="{\
+                        selected: (color===selected),\
+                        hRDF: $first&&hzRound,\
+                        hRDL: $last&&hzRound,\
+                        vRDF: $first&&vertRound,\
+                        vRDL: $last&&vertRound,\
+                        tlRound: $first&&columnRound,\
+                        trRound: $index==(options.columns-1)&&columnRound,\
+                        brRound: $last&&columnRound,\
+                        blRound: $index==(colors.length-options.columns)&&columnRound\
+                        }"\
+                        ng-click="pick(color)"\
+                        style="background-color:{{color}};"\
+                        ng-style="css">\
+                        </li></ul>',
         link: function (scope, element, attr) {
 
           // Priorities
@@ -80,8 +80,10 @@ angular.module('ngjsColorPicker', [])
           // TODO: Add support for setting rows instead of just columns
           if(scope.options.columns > 0){
             var indexOfPx = scope.css.width.indexOf('p');
-            element.children().css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
-            element.children().css('height', scope.options.size*(scope.colors.length/scope.options.columns));
+            //element.children().css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
+            //element.children().css('height', scope.options.size*(scope.colors.length/scope.options.columns));
+            element.css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
+            element.css('height', scope.options.size*(scope.colors.length/scope.options.columns));
             scope.css.float = 'left';
           }
 
