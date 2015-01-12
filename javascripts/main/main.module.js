@@ -24,7 +24,7 @@ angular.module('exampleApp').
         };
 
         $scope.optionsColumn = {
-            columns: 5
+            columns: 4
         };
 
     }]);
