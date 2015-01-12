@@ -82,10 +82,6 @@ angular.module('ngjsColorPicker', [])
           // TODO: Add support for setting rows instead of just columns
           if(scope.options.columns > 0){
             var indexOfPx = scope.css.width.indexOf('p');
-            //element.children().css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
-            //element.children().css('height', scope.options.size*(scope.colors.length/scope.options.columns));
-            //element.find('ul').css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
-            //element.find('ul').css('height', scope.options.size*(scope.colors.length/scope.options.columns));
             scope.ulCss.width = scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))) + 'px';
             scope.ulCss.height = scope.options.size*(scope.colors.length/scope.options.columns) + 'px';
             scope.css.cssFloat = 'left';

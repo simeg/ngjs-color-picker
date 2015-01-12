@@ -64,7 +64,3 @@ ngjs-color-picker li.brRound {
 ngjs-color-picker li.blRound {
   border-radius: 0 0 0 5px;
 }
-
-ngjs-color-picker .width-size {
-  width: 100px;
-}
