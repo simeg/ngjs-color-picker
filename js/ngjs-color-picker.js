@@ -72,28 +72,20 @@ angular.module('ngjsColorPicker', [])
           scope.css = {};
           // Set bar to horizontal/vertical
           scope.css.display = (scope.options.horizontal ? 'inline-block' : 'block');
+          scope.css.float = "left";
           // Set size of squares
           scope.css.width = scope.css.height = scope.options.size + 'px';
 
           // - If uneven columns - no round corners at all
           // - Horizontal or vertical has no effect if columns
           // TODO: Add support for setting rows instead of just columns
-          //if(scope.options.columns > 0){
-          //    var indexOfPx = scope.css.width.indexOf('p');
-          //    //element.children().css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
-          //    //element.children().css('height', scope.options.size*(scope.colors.length/scope.options.columns));
-          //    element.find('ul').css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
-          //    element.find('ul').css('height', scope.options.size*(scope.colors.length/scope.options.columns));
-          //    scope.css.float = 'left';
-          //}
-
-          // .addClass
-          if(scope.options.columns == 1){
-            element.find('ul').addClass('width-size');
-          }
-
-          if(scope.options.columns == 2){
-            element.children().addClass('width-size');
+          if(scope.options.columns > 0){
+              var indexOfPx = scope.css.width.indexOf('p');
+              //element.children().css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
+              //element.children().css('height', scope.options.size*(scope.colors.length/scope.options.columns));
+              element.find('ul').css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
+              element.find('ul').css('height', scope.options.size*(scope.colors.length/scope.options.columns));
+              scope.css.float = 'left';
           }
 
           // Set if rounded corners (horizontal or vertical)
