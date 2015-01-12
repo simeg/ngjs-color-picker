@@ -24,7 +24,7 @@ angular.module('ngjsColorPicker', [])
           gradient: '=?'
         },
         restrict: 'E',
-        template: '<ul ng-style="ul-css"><li ng-repeat="color in colors | limitTo: options.total"\
+        template: '<ul ng-style="ulCss"><li ng-repeat="color in colors | limitTo: options.total"\
                         ng-class="{\
                         selected: (color===selected),\
                         hRDF: $first&&hzRound,\
@@ -86,8 +86,8 @@ angular.module('ngjsColorPicker', [])
             //element.children().css('height', scope.options.size*(scope.colors.length/scope.options.columns));
             //element.find('ul').css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
             //element.find('ul').css('height', scope.options.size*(scope.colors.length/scope.options.columns));
-            scope.ulCss.width = scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx)));
-            scope.ulCss.height = scope.options.size*(scope.colors.length/scope.options.columns);
+            scope.ulCss.width = scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))) + 'px';
+            scope.ulCss.height = scope.options.size*(scope.colors.length/scope.options.columns) + 'px';
             scope.css.cssFloat = 'left';
           }
 
