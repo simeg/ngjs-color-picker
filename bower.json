@@ -6,14 +6,24 @@
     "Simon Egersand <s.egersand@gmail.com>"
   ],
   "description": "A color picker with a few extra functions for AngularJS",
+  "main": "js/ngjs-color-picker.js",
+  "moduleType": [
+    "globals"
+  ],
   "keywords": [
-    "directive",
-    "colors",
-    "color-picker",
     "color",
     "picker",
+    "color-picker",
+    "angular",
     "angularjs",
-    "angular"
+    "directive"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
