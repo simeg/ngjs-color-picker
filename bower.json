@@ -15,12 +15,5 @@
     "angularjs",
     "angular"
   ],
-  "license": "MIT",
-  "ignore": [
-    ".gitignore"
-  ],
-  "main": [
-    "./js/ngjs-color-picker.js",
-    "./css/ngjs-color-picker.css"
-  ]
+  "license": "MIT"
 }
