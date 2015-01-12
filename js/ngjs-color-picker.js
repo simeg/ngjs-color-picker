@@ -116,24 +116,17 @@ angular.module('ngjsColorPicker', [])
           // (positive or negative integer)
           // ----
           // - Max count is 14, cannot produce more colors than that
-          console.log("Scope gradient is:" + scope.gradient);
           if(scope.gradient && !scope.customColors && !scope.options.randomColors){
-            console.log("Inside gradient");
             var validHex = _formatToHex(scope.gradient.start);
             var isOkHex = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(validHex);
-            isOkHex = true;
             if(isOkHex){
               scope.colors = [];
-              count = scope.gradient.hasOwnProperty('count')|| 10;
-              var interval, step;
-              interval = step = scope.gradient.hasOwnProperty('step') || 1;
+              count = (scope.gradient.hasOwnProperty('count') ? scope.gradient.count : 10);
+              var interval = (scope.gradient.hasOwnProperty('step') ? scope.gradient.step : 1);
               while(count !== 0){
-                console.log("Count: " + count);
                 scope.colors.push(_shadeColor(scope.colors.length === 0 ? validHex : scope.colors[scope.colors.length-1], interval));
-                interval+=step;
+                interval+=scope.gradient.step;
                 count--;
-
-                console.log(scope.colors);
 
                 // If black or white - stop generating more colors
                 if(scope.colors[scope.colors.length-1].toLowerCase() === '#ffffff' || scope.colors[scope.colors.length-1] === '#000000')
