@@ -1,0 +1,36 @@
+{
+  "name": "ngjs-color-picker",
+  "version": "1.0",
+  "homepage": "https://github.com/simeg/ngjs-color-picker",
+  "authors": [
+    "Simon Egersand <s.egersand@gmail.com>"
+  ],
+  "description": "A color picker with a few extra functions for AngularJS",
+  "keywords": [
+    "directive",
+    "colors",
+    "color-picker",
+    "color",
+    "picker",
+    "angularjs",
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".gitignore"
+  ],
+  "main": [
+    "./js/ngjs-color-picker.js",
+    "./css/ngjs-color-picker.css"
+  ],
+  "dependencies": {
+    "angular": ">=1.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/simeg/ngjs-color-picker"
+  },
+  "resolutions": {
+    "angular": "1.2.0"
+  }
+}
