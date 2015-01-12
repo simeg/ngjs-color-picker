@@ -82,8 +82,8 @@ angular.module('ngjsColorPicker', [])
             var indexOfPx = scope.css.width.indexOf('p');
             //element.children().css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
             //element.children().css('height', scope.options.size*(scope.colors.length/scope.options.columns));
-            element.css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
-            element.css('height', scope.options.size*(scope.colors.length/scope.options.columns));
+            element.find('ul').css('width', scope.options.columns*(parseInt(scope.css.width.substr(0,indexOfPx))));
+            element.find('ul').css('height', scope.options.size*(scope.colors.length/scope.options.columns));
             scope.css.float = 'left';
           }
 
