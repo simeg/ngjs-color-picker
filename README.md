@@ -11,7 +11,7 @@ A small directive which essentially is a color picker but with a few extra funct
 
 # Demo
 - [Demo](http://simeg.github.io/ngjs-color-picker)
-- [Plunker](http://embed.plnkr.co/INXf3efkYeP1gWaF9SId/preview) (Note: All functions are not working properly on Plunker)
+- [Plunker](http://embed.plnkr.co/INXf3efkYeP1gWaF9SId/preview)
 
 # Installation
 ####via bower (NOT WORKING AT THE MOMENT):
