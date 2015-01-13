@@ -23,19 +23,19 @@ Clone or [download](https://github.com/simeg/ngjs-color-picker/archive/master.zi
 
 **JS**
 
-```
+``` html
 <script type="text/javascript" src="js/ngjs-color-picker"></script>
 ```
 
 **CSS**
 
-```
+``` html
 <link rel="stylesheet" href="css/ngjs-color-picker.css" />
 ```
 
 Inject the directive as a dependency in your app:
 
-```
+``` javascript
 angular.module('myApp', ['ngjsColorPicker']);
 ```
 
