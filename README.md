@@ -14,7 +14,7 @@ A small directive which essentially is a color picker but with a few extra funct
 - [Plunker](http://embed.plnkr.co/INXf3efkYeP1gWaF9SId/preview) (Note: All functions are not working properly on Plunker)
 
 # Installation
-####via bower:
+####via bower (NOT WORKING AT THE MOMENT):
 ```
 $ bower install --save ngjs-color-picker
 ```
