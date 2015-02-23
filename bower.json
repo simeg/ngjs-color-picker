@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "homepage": "https://github.com/simeg/ngjs-color-picker",
   "authors": [
-    "Simon Egersand <s.egersand@gmail.com>"
+    "Simon Egersand <simon@egersand.se>"
   ],
   "description": "A color picker with a few extra functions",
   "main": [
