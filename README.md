@@ -42,6 +42,14 @@ angular.module('myApp', ['ngjsColorPicker']);
 # Usage and documentation
 For documentation, examples and usage see the [GitHub page for this repository](http://simeg.github.io/ngjs-color-picker).
 
+# TODO
+* Create a `package.json` to register this package to NPM
+* Click (or something) to get the hex-code for the color (rgb should also be available)
+* Add reverse option for gradient
+* Include color themes (Good palettes: http://jsfiddle.net/nicgirault/bqph3pkL/)
+* Add option to select rows instead of columns
+* Add information about all the options to the GitHub page
+
 # License
 The MIT License (MIT)
 
