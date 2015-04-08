@@ -61,7 +61,6 @@ For documentation, examples and usage see the [GitHub page for this repository](
 * Add reverse option for gradient
 * Include color themes (Good palettes: http://jsfiddle.net/nicgirault/bqph3pkL/)
 * Add option to select rows instead of columns
-* Add information about all the options to the GitHub page
 
 # License
 The MIT License (MIT)
