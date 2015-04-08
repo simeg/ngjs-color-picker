@@ -18,6 +18,15 @@ A small directive which essentially is a color picker but with a few extra funct
 ```
 $ bower install --save ngjs-color-picker
 ```
+
+You may have to run
+
+ ```
+ $ grunt wiredep
+ ```
+ 
+to make grunt automatically add the needed files to your `index.html` (if using Yeoman - which I recommend).
+
 ####manually:
 Clone or [download](https://github.com/simeg/ngjs-color-picker/archive/master.zip) the repository and include the `js` and `css` files in your app.
 
