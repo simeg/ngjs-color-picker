@@ -21,51 +21,95 @@
     <hr/>
     <h1>Available options</h1>
 
-    <h2>-- Coming soon --</h2>
+    <h2>Selected color</h2>
+    <p>
+        <strong>Attribute:</strong> <code>selected</code><br/>
+        <strong>Description:</strong> The default selected color in the color picker.<br/>
+        <strong>Default:</strong> First element in array of included colors.
+    </p>
 
-    <!--<table>-->
-        <!--<thead>-->
-        <!--<tr>-->
-            <!--<th>-->
-                <!--Attribute-->
-            <!--</th>-->
-        <!--</tr>-->
+    <h2>Custom colors</h2>
+    <p>
+        <strong>Attribute:</strong> <code>customColors</code><br/>
+        <strong>Description:</strong> Custom colors for the color picker.<br/>
+        <strong>Default:</strong> An array with following elements: <code>[
+        #7bd148,
+        #5484ed,
+        #a4bdfc,
+        #46d6db,
+        #7ae7bf,
+        #51b749,
+        #fbd75b,
+        #ffb878,
+        #ff887c,
+        #dc2127,
+        #dbadff,
+        #e1e1e1
+        ]</code>
+    </p>
 
-        <!--<tr>-->
-            <!--<th>-->
-                <!--Default-->
-            <!--</th>-->
-        <!--</tr>-->
+    <h2>Options</h2>
+    <p>
+        <strong>Attribute:</strong> <code>options</code><br/>
+        <strong>Description:</strong> An object containing several options for the color picker.<br/>
 
-        <!--<tr>-->
-            <!--<th>-->
-                <!--Description-->
-            <!--</th>-->
-        <!--</tr>-->
+        <h3>Keys in <code>options</code></h3>
 
-        <!--</thead>-->
+        <strong>Key:</strong> <code>roundCorners</code><br/>
+        <strong>Description:</strong> Option for round corners.<br/>
+        <strong>Default:</strong> <code>false</code>
+        <br/><br/>
+        <strong>Key:</strong> <code>size</code><br/>
+        <strong>Description:</strong> Option for size in pixels of each color box in the color picker.<br/>
+        <strong>Default:</strong> <code>20</code>
+        <br/><br/>
+        <strong>Key:</strong> <code>total</code><br/>
+        <strong>Description:</strong> Option for total colors visible.<br/>
+        <strong>Default:</strong> Length of color array (default color array has 12 elements)
+        <br/><br/>
+        <strong>Key:</strong> <code>horizontal</code><br/>
+        <strong>Description:</strong> Option for horizontal or vertical color picker.<br/>
+        <strong>Default:</strong> <code>true</code>
+        <br/><br/>
+        <strong>Key:</strong> <code>columns</code><br/>
+        <strong>Description:</strong> Option for columns and how many.<br/>
+        <strong>Default:</strong> <code>0</code><br/>
+        <strong>Note:</strong> An even color picker with columns can <i>only</i> be created if
+        the <code>total</code> can be divided with <code>columns</code> with no remainder (<code>total % columns === 0</code>)
+        <br/><br/>
+    </p>
+    <h2>Gradient</h2>
 
-        <!--<tr>-->
-            <!--<td><strong>custom-colors</strong></td>-->
-            <!--<td><i>An array of pre-defined colors. For specific hexcolors see code</i></td>-->
-            <!--<td>Add an array of valid hexcolors (e.g. #FFFFFF) to set your own colors</td>-->
-        <!--</tr>-->
-        <!--<tr>-->
-            <!--<td><strong>selected</strong></td>-->
-            <!--<td><i>First available color in the color picker</i></td>-->
-            <!--<td>Specify which color you want selected as default</td>-->
-        <!--</tr>-->
-        <!--<tr>-->
-            <!--<td><strong>gradient</strong></td>-->
-            <!--<td><i>false</i></td>-->
-            <!--<td>Create a gradient of colors. Supply an object with the following key-value pairs:<br>-->
-            <!--<i>start</i>: The starting color of the gradient<br>-->
-            <!--<i>count</i> (default 10): How many colors to be generated. If the colors reach total white (#FFFFFF) or total black (#000000) it will stop automatically<br>-->
-            <!--<i>step</i> (default 1): If you pass in 100 for percent it will make your color pure white. If you pass in 0 for percent, nothing will happen. If you pass in 1 for percent it will add 3 shades to all colors (2.55 shades per 1%, rounded)</td>-->
-        <!--</tr>-->
-    <!--</table>-->
+    <p>
+        <strong>Attribute:</strong> <code>gradient</code><br/>
+        <strong>Description:</strong> An object containing options for creating gradient colors.<br/>
 
+        <h3>Keys in <code>gradient</code></h3>
 
+        <strong>Key:</strong> <code>count</code><br/>
+        <strong>Description:</strong> Option for how many colors in the gradient.<br/>
+        <strong>Default:</strong> <code>10</code><br/>
+        <strong>Note:</strong> <code>14</code> is maximum.
+        <br/><br/>
+        <strong>Key:</strong> <code>start</code><br/>
+        <strong>Description:</strong> Option for the starting color, must be full hex (either <code>#08a35c</code> or <code>08a35c</code>).<br/>
+        <strong>Note:</strong> Must be included for gradient to work.
+        <br/><br/>
+        <strong>Key:</strong> <code>step</code><br/>
+        <strong>Description:</strong> Option for how "fast" the gradient will change color.<br/>
+        <strong>Default:</strong> <code>1</code>
+        <br/><br/>
+
+    </p>
+
+    <h2>Priorities</h2>
+    <p>The directive will prioritize accordingly</p>
+    <ol>
+        <li>Custom colors</li>
+        <li>Random colors</li>
+        <li>Gradient</li>
+        <li>Default colors</li>
+    </ol>
     <hr/>
 
     <h2>Basic usage example</h2>
