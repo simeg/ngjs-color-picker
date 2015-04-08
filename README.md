@@ -27,6 +27,11 @@ You may have to run
  
 to make grunt automatically add the needed files to your `index.html` (if using Yeoman - which I recommend).
 
+####via npm:
+```
+$ npm install --save ngjs-color-picker
+```
+
 ####manually:
 Clone or [download](https://github.com/simeg/ngjs-color-picker/archive/master.zip) the repository and include the `js` and `css` files in your app.
 
@@ -52,7 +57,6 @@ angular.module('myApp', ['ngjsColorPicker']);
 For documentation, examples and usage see the [GitHub page for this repository](http://simeg.github.io/ngjs-color-picker).
 
 # TODO
-* Create a `package.json` to register this package to NPM
 * Click (or something) to get the hex-code for the color (rgb should also be available)
 * Add reverse option for gradient
 * Include color themes (Good palettes: http://jsfiddle.net/nicgirault/bqph3pkL/)
