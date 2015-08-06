@@ -37,7 +37,7 @@ angular.module('ngjsColorPicker', [])
                         blRound: $index==(colors.length-options.columns)&&columnRound\
                         }"\
                         ng-click="pick(color)"\
-                        style="background-color:{{color}};"\
+                        ng-attr-style="background-color:{{color}};"\
                         ng-style="css">\
                         </li></ul>',
             link: function (scope, element, attr) {
