@@ -1,6 +1,6 @@
 {
   "name": "ngjs-color-picker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A color picker with a few extra functions - for AngularJS",
   "main": "js/ngjs-color-picker.js",
   "files": [
