@@ -18,7 +18,7 @@ angular.module('ngjsColorPicker', [])
         ];
         return {
             scope: {
-                chosenColor: '=?',
+                selectedColor: '=?',
                 customColors: '=?',
                 options: '=?',
                 gradient: '=?'
@@ -26,7 +26,7 @@ angular.module('ngjsColorPicker', [])
             restrict: 'E',
             template: '<ul ng-style="ulCss"><li ng-repeat="color in colors | limitTo: options.total"\
                         ng-class="{\
-                        chosenColor: (color===chosenColor),\
+                        selectedColor: (color===selectedColor),\
                         hRDF: $first&&hzRound,\
                         hRDL: $last&&hzRound,\
                         vRDF: $first&&vertRound,\
@@ -143,11 +143,11 @@ angular.module('ngjsColorPicker', [])
 
                 // Pick a color from the view
                 scope.pick = function (color) {
-                    scope.chosenColor = color;
+                    scope.selectedColor = color;
                 };
 
                 // Set selection to chosen color or first color
-                scope.chosenColor = scope.chosenColor || scope.colors[0];
+                scope.selectedColor = scope.selectedColor || scope.colors[0];
 
             }
         };

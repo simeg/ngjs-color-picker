@@ -16,7 +16,7 @@ ngjs-color-picker li:hover{
   /*background-image:none;*/
 }
 
-ngjs-color-picker li.chosenColor {
+ngjs-color-picker li.selectedColor {
   background-image:none;
   border: 1px solid #333;
 }
