@@ -64,7 +64,7 @@ For documentation, examples and usage see the [GitHub page for this repository](
 # License
 The MIT License (MIT)
 
-Copyright (c) 2015 Simon Egersand
+Copyright (c) 2016 Simon Egersand
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
