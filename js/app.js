@@ -10,7 +10,7 @@ angular.module('exampleApp', [
             $locationProvider.html5Mode(false);
 
             $routeProvider.when('/', {
-                templateUrl: 'javascripts/main/index.html',
+                templateUrl: 'js/main/index.html',
                 controller: 'ExampleCtrl'
             });
 
