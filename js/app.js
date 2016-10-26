@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('exampleApp', [
+angular.module('demoApp', [
     'ngRoute',
     'ngjsColorPicker',
     'hljs'
@@ -11,7 +11,7 @@ angular.module('exampleApp', [
 
             $routeProvider.when('/', {
                 templateUrl: 'js/main/index.html',
-                controller: 'ExampleCtrl'
+                controller: 'DemoCtrl'
             });
 
             $routeProvider.otherwise('/');

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('exampleApp').
-    controller('ExampleCtrl', ['$scope', function($scope) {
+angular.module('demoApp').
+    controller('DemoCtrl', ['$scope', function($scope) {
 
         $scope.customOptions = {
             size: 30,
