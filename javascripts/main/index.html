@@ -23,7 +23,7 @@
 
     <h2>Selected color</h2>
     <p>
-        <strong>Attribute:</strong> <code>selected</code><br/>
+        <strong>Attribute:</strong> <code>selectedColor</code><br/>
         <strong>Description:</strong> The default selected color in the color picker.<br/>
         <strong>Default:</strong> First element in array of included colors.
     </p>
@@ -113,7 +113,7 @@
     <hr/>
 
     <h2>Basic usage example</h2>
-    <ngjs-color-picker selected="selected"></ngjs-color-picker>
+    <ngjs-color-picker selected-color="selected"></ngjs-color-picker>
     <input type="text" ng-model="selected">
     <br><br>
     <h3>Code</h3>
@@ -123,13 +123,13 @@
     <hr/>
 
     <h2>Example with larger size and round corners</h2>
-    <ngjs-color-picker selected="selectedColor" options="customOptions"></ngjs-color-picker>
-    <input type="text" ng-model="selectedColor">
+    <ngjs-color-picker selected-color="selected" options="customOptions"></ngjs-color-picker>
+    <input type="text" ng-model="selected">
     <br><br>
     <h3>Code</h3>
     <div hljs>
 // HTML
-<ngjs-color-picker selected="selectedColor" options="customOptions"></ngjs-color-picker>
+<ngjs-color-picker selected-color="selectedColor" options="customOptions"></ngjs-color-picker>
 
 // JS
 $scope.customOptions = {
@@ -140,13 +140,13 @@ $scope.customOptions = {
     <hr/>
 
     <h2>Example with random colors</h2>
-    <ngjs-color-picker selected="selectedColorRandom" options="optionsRandom"></ngjs-color-picker>
+    <ngjs-color-picker selected-color="selectedColorRandom" options="optionsRandom"></ngjs-color-picker>
     <input type="text" ng-model="selectedColorRandom">
     <br><br>
     <h3>Code</h3>
     <div hljs>
 // HTML
-<ngjs-color-picker selected="selectedColorRandom" options="optionsRandom"></ngjs-color-picker>
+<ngjs-color-picker selected-color="selectedColorRandom" options="optionsRandom"></ngjs-color-picker>
 
 // JS
 $scope.optionsRandom = {
@@ -156,13 +156,13 @@ $scope.optionsRandom = {
     <hr/>
 
     <h2>Example with gradient</h2>
-    <ngjs-color-picker selected="selectedColorGradient" gradient="optionsGradient"></ngjs-color-picker>
+    <ngjs-color-picker selected-color="selectedColorGradient" gradient="optionsGradient"></ngjs-color-picker>
     <input type="text" ng-model="selectedColorGradient">
     <br><br>
     <h3>Code</h3>
     <div hljs>
 // HTML
-<ngjs-color-picker selected="selectedColor" gradient="optionsGradient"></ngjs-color-picker>
+<ngjs-color-picker selected-color="selectedColor" gradient="optionsGradient"></ngjs-color-picker>
 
 // JS
 $scope.optionsGradient = {
@@ -174,13 +174,13 @@ $scope.optionsGradient = {
     <hr/>
 
     <h2>Example with vertical color picker</h2>
-    <ngjs-color-picker selected="selectedColorVert" options="optionsVertical"></ngjs-color-picker>
+    <ngjs-color-picker selected-color="selectedColorVert" options="optionsVertical"></ngjs-color-picker>
     <input type="text" ng-model="selectedColorVert">
     <br><br>
     <h3>Code</h3>
     <div hljs>
 // HTML
-<ngjs-color-picker selected="selectedColor" options="optionsVertical"></ngjs-color-picker>
+<ngjs-color-picker selected-color="selectedColor" options="optionsVertical"></ngjs-color-picker>
 
 // JS
 $scope.optionsVertical = {
@@ -191,13 +191,13 @@ $scope.optionsVertical = {
     <hr/>
 
     <h2>Example with columns defined</h2>
-    <ngjs-color-picker selected="selectedColorColumn" options="optionsColumn"></ngjs-color-picker>
+    <ngjs-color-picker selected-color="selectedColorColumn" options="optionsColumn"></ngjs-color-picker>
     <input type="text" ng-model="selectedColorColumn">
     <br><br>
     <h3>Code</h3>
     <div hljs>
 // HTML
-<ngjs-color-picker selected="selectedColor" options="optionsColumn"></ngjs-color-picker>
+<ngjs-color-picker selected-color="selectedColor" options="optionsColumn"></ngjs-color-picker>
 
 // JS
 $scope.optionsColumn = {
