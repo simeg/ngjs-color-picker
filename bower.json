@@ -33,8 +33,5 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/simeg/ngjs-color-picker"
-  },
-  "dependencies": {
-    "angular": ">=1.2.*"
   }
 }

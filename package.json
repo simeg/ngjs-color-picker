@@ -26,5 +26,8 @@
     "url": "https://github.com/simeg/ngjs-color-picker/issues",
     "email" : "simon@egersand.se"
   },
-  "homepage": "https://github.com/simeg/ngjs-color-picker"
+  "homepage": "https://github.com/simeg/ngjs-color-picker",
+  "dependencies": {
+    "angular": "^1.2"
+  }
 }
