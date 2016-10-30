@@ -43,6 +43,21 @@ describe("ngjs-color-picker", function() {
         roundCorners: false
       };
       expect(element.isolateScope().options).toEqual(defaultOptions);
+      var defaultColors =  [
+        '#7bd148',
+        '#5484ed',
+        '#a4bdfc',
+        '#46d6db',
+        '#7ae7bf',
+        '#51b749',
+        '#fbd75b',
+        '#ffb878',
+        '#ff887c',
+        '#dc2127',
+        '#dbadff',
+        '#e1e1e1'
+      ];
+      expect(element.isolateScope().colors).toEqual(defaultColors);
     });
 
     describe("renders", function() {
@@ -83,10 +98,32 @@ describe("ngjs-color-picker", function() {
         });
         expect(blockElements.length).toEqual(0);
       });
+
+      it("with default colors", function() {
+        var defaultColors = [
+          'rgb(123, 209, 72)',
+          'rgb(84, 132, 237)',
+          'rgb(164, 189, 252)',
+          'rgb(70, 214, 219)',
+          'rgb(122, 231, 191)',
+          'rgb(81, 183, 73)',
+          'rgb(251, 215, 91)',
+          'rgb(255, 184, 120)',
+          'rgb(255, 136, 124)',
+          'rgb(220, 33, 39)',
+          'rgb(219, 173, 255)',
+          'rgb(225, 225, 225)'
+        ];
+        var listItems = content.find('li');
+        var matches = listItems.filter(function (index, item) {
+          return item.style.backgroundColor === defaultColors[index];
+        });
+        expect(matches.length).toEqual(listItems.length);
+      });
     });
   });
 
-  describe("with custom option", function() {
+  describe("with single custom option", function() {
     it("adds provided option to scope", function() {
       var $scope = $rootScope.$new();
       $scope.options = {
@@ -95,6 +132,33 @@ describe("ngjs-color-picker", function() {
       var element = $compile('<ngjs-color-picker options="options"></ngjs-color-picker>')($scope);
       expect(element.isolateScope().options.hasOwnProperty('customOption')).toEqual(true);
       expect(element.isolateScope().options.customOption).toEqual('shouldExist');
+    });
+
+    describe("(customColors)", function() {
+      var element, content, customColors;
+      beforeEach(function() {
+        customColors = [
+          'rgb(27, 209, 72)',
+          'rgb(20, 132, 237)',
+          'rgb(161, 189, 252)',
+          'rgb(22, 214, 219)',
+          'rgb(26, 231, 191)',
+          'rgb(17, 183, 73)'
+        ];
+        var $scope = $rootScope.$new();
+        $scope.customColors = customColors;
+        element = $compile('<ngjs-color-picker custom-colors="customColors"></ngjs-color-picker>')($scope);
+        $rootScope.$digest();
+        content = element.contents();
+      });
+
+      it("renders with custom colors", function() {
+        var listItems = content.find('li');
+        var matches = listItems.filter(function (index, item) {
+          return item.style.backgroundColor === customColors[index];
+        });
+        expect(matches.length).toEqual(listItems.length);
+      });
     });
 
     describe("(total)", function() {
@@ -178,7 +242,7 @@ describe("ngjs-color-picker", function() {
         content;
       beforeEach(function() {
         var $scope = $rootScope.$new();
-        $scope.options = { roundCorners: true };
+        $scope.options = { randomColors: 10 };
         element = $compile('<ngjs-color-picker options="options"></ngjs-color-picker>')($scope);
         $rootScope.$digest();
         content = element.contents();
@@ -199,6 +263,7 @@ describe("ngjs-color-picker", function() {
           'rgb(219, 173, 255)',
           'rgb(225, 225, 225)'
         ];
+        sortedDefaultColorsInRgb.sort();
         var listItems = content.find('li');
         var randomColors = [];
         for (var i = 0; i < listItems.length; i++) {
@@ -303,6 +368,22 @@ describe("ngjs-color-picker", function() {
           expect(listContainer.style.width).toEqual(columnDirectiveWidth);
           expect(listContainer.style.height).toEqual(columnDirectiveHeight);
         }
+      });
+    });
+  });
+
+  describe("with multiple custom options", function () {
+    describe("with prioritizes", function () {
+      it("has custom colors as prio 1", function () {
+        // TODO
+      });
+
+      it("has random colors as prio 2", function () {
+        // TODO
+      });
+
+      it("has gradient colors as prio 1", function () {
+        // TODO
       });
     });
   });
