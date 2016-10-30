@@ -41,6 +41,7 @@
     "phantomjs-prebuilt": "^2.1.13"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start ./test/karma.conf.js"
+    "test": "./node_modules/karma/bin/karma start ./test/karma.conf.js --single-run",
+    "test:watch": "./node_modules/karma/bin/karma start ./test/karma.conf.js"
   }
 }
