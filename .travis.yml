@@ -10,6 +10,7 @@ sudo: false
 before_script:
   - npm install -g jasmine-node codecov istanbul
 script:
+    - npm run lint
     - npm run test
     - istanbul cover node_modules/jasmine/bin/jasmine.js
     - codecov
