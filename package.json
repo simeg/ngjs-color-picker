@@ -20,11 +20,10 @@
     "angularjs",
     "directive"
   ],
-  "author": "Simon Egersand <simon@egersand.se>",
+  "author": "Simon Egersand <s.egersand@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/simeg/ngjs-color-picker/issues",
-    "email" : "simon@egersand.se"
+    "url": "https://github.com/simeg/ngjs-color-picker/issues"
   },
   "homepage": "https://github.com/simeg/ngjs-color-picker",
   "dependencies": {
