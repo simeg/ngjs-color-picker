@@ -1,0 +1,20 @@
+language: node_js
+os:
+    - linux
+    - windows
+    - osx
+node_js:
+    - "stable"
+    - "6"
+sudo: false
+before_script:
+  - npm install -g jasmine-node codecov istanbul
+script:
+    - npm run test
+    - istanbul cover node_modules/jasmine/bin/jasmine.js
+    - codecov
+cache:
+  directories:
+    - node_modules
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
