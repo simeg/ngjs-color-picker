@@ -60,6 +60,12 @@ angular.module('myApp', ['ngjsColorPicker']);
 # Usage and documentation
 For documentation, examples and usage see the [GitHub page for this repository](http://simeg.github.io/ngjs-color-picker).
 
+## Option prioritization
+1. Custom colors
+2. Random colors
+3. Gradient
+4. Default colors
+
 # TODO
 * Click (or something) to get the hex-code for the color (rgb should also be available)
 * Add reverse option for gradient
