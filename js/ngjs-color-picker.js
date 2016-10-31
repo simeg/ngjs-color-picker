@@ -2,20 +2,25 @@
 
 angular.module('ngjsColorPicker', [])
     .directive('ngjsColorPicker', function() {
-        var defaultColors =  [
-            '#7bd148',
-            '#5484ed',
-            '#a4bdfc',
-            '#46d6db',
-            '#7ae7bf',
-            '#51b749',
-            '#fbd75b',
-            '#ffb878',
-            '#ff887c',
-            '#dc2127',
-            '#dbadff',
-            '#e1e1e1'
-        ];
+        var template =
+            '<ul ng-style="ulCss"> \
+                <li ng-repeat="color in colors | limitTo: options.total" \
+                    ng-class="{ \
+                    selectedColor: (color===selectedColor), \
+                    hRDF: $first&&hzRound, \
+                    hRDL: $last&&hzRound, \
+                    vRDF: $first&&vertRound, \
+                    vRDL: $last&&vertRound, \
+                    tlRound: $first&&columnRound, \
+                    trRound: $index==(options.columns-1)&&columnRound, \
+                    brRound: $last&&columnRound, \
+                    blRound: $index==(colors.length-options.columns)&&columnRound \
+                    }" \
+                    ng-click="pick(color)" \
+                    ng-attr-style="background-color:{{color}};" \
+                    ng-style="getCss(color)"> \
+                    </li>\
+                </ul>';
         return {
             scope: {
                 selectedColor: '=?',
@@ -24,23 +29,23 @@ angular.module('ngjsColorPicker', [])
                 gradient: '=?'
             },
             restrict: 'E',
-            template: '<ul ng-style="ulCss"><li ng-repeat="color in colors | limitTo: options.total"\
-                        ng-class="{\
-                        selectedColor: (color===selectedColor),\
-                        hRDF: $first&&hzRound,\
-                        hRDL: $last&&hzRound,\
-                        vRDF: $first&&vertRound,\
-                        vRDL: $last&&vertRound,\
-                        tlRound: $first&&columnRound,\
-                        trRound: $index==(options.columns-1)&&columnRound,\
-                        brRound: $last&&columnRound,\
-                        blRound: $index==(colors.length-options.columns)&&columnRound\
-                        }"\
-                        ng-click="pick(color)"\
-                        ng-attr-style="background-color:{{color}};"\
-                        ng-style="getCss(color)">\
-                        </li></ul>',
+            template: template,
             link: function (scope, element, attr) {
+
+                var defaultColors =  [
+                    '#7bd148',
+                    '#5484ed',
+                    '#a4bdfc',
+                    '#46d6db',
+                    '#7ae7bf',
+                    '#51b749',
+                    '#fbd75b',
+                    '#ffb878',
+                    '#ff887c',
+                    '#dc2127',
+                    '#dbadff',
+                    '#e1e1e1'
+                ];
 
                 // Priorities
                 // 1. Custom colors
@@ -92,7 +97,7 @@ angular.module('ngjsColorPicker', [])
                 }
 
                 // Generate random hex color
-                function _randomHexColor(){
+                function _randomHexColor() {
                     return ("#" + (Math.random().toString(16) + '000000').slice(2, 8));
                 }
 
@@ -130,7 +135,7 @@ angular.module('ngjsColorPicker', [])
                 scope.columnRound = (scope.options.columns && scope.options.roundCorners && isOkColumn);
 
                 // Transfer input to valid hex
-                function _formatToHex(hex){
+                function _formatToHex(hex) {
                     var index = +(hex.charAt(0) === '#');
                     return '#' + hex.substr(index).toLowerCase();
                 }
@@ -142,13 +147,13 @@ angular.module('ngjsColorPicker', [])
                 }
 
                 // Returns the existing css, but setting its background property to the passed color
-                scope.getCss = function (color) {
+                scope.getCss = function(color) {
                     scope.css.background = color;
-		    return scope.css;
+                    return scope.css;
                 };
 
                 // Pick a color from the view
-                scope.pick = function (color) {
+                scope.pick = function(color) {
                     scope.selectedColor = color;
                 };
 
