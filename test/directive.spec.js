@@ -1,6 +1,5 @@
 describe("ngjs-color-picker", function() {
-  var $compile,
-    $rootScope;
+  var $compile, $rootScope;
 
   beforeEach(module('ngjsColorPicker'));
 
@@ -24,8 +23,7 @@ describe("ngjs-color-picker", function() {
   });
 
   describe("without custom options", function() {
-    var element,
-      content;
+    var element, content;
     beforeEach(function() {
       element = $compile('<ngjs-color-picker></ngjs-color-picker>')($rootScope);
       // angular.element(document).find('body').append(element);
@@ -162,8 +160,7 @@ describe("ngjs-color-picker", function() {
     });
 
     describe("(total)", function() {
-      var element,
-        content;
+      var element, content;
       beforeEach(function() {
         var $scope = $rootScope.$new();
         $scope.options = { total: 3 };
@@ -179,8 +176,7 @@ describe("ngjs-color-picker", function() {
     });
 
     describe("(selectedColor)", function() {
-      var element,
-        content;
+      var element, content;
       beforeEach(function() {
         var $scope = $rootScope.$new();
         $scope.selectedColor = '#46d6db';
@@ -197,8 +193,7 @@ describe("ngjs-color-picker", function() {
     });
 
     describe("(size)", function() {
-      var element,
-        content;
+      var element, content;
       beforeEach(function() {
         var $scope = $rootScope.$new();
         $scope.options = { size: 30 };
@@ -218,8 +213,7 @@ describe("ngjs-color-picker", function() {
     });
 
     describe("(round corners)", function() {
-      var element,
-        content;
+      var element, content;
       beforeEach(function() {
         var $scope = $rootScope.$new();
         $scope.options = { roundCorners: true };
@@ -238,8 +232,7 @@ describe("ngjs-color-picker", function() {
     });
 
     describe("(random colors)", function() {
-      var element,
-        content;
+      var element, content;
       beforeEach(function() {
         var $scope = $rootScope.$new();
         $scope.options = { randomColors: 10 };
@@ -277,8 +270,7 @@ describe("ngjs-color-picker", function() {
     });
 
     describe("(gradient colors)", function() {
-      var element,
-        content;
+      var element, content;
       beforeEach(function() {
         var $scope = $rootScope.$new();
         $scope.gradient = {
@@ -301,8 +293,7 @@ describe("ngjs-color-picker", function() {
     });
 
     describe("(vertical direction)", function() {
-      var element,
-        content;
+      var element, content;
       beforeEach(function() {
         var $scope = $rootScope.$new();
         $scope.options = {
@@ -323,8 +314,7 @@ describe("ngjs-color-picker", function() {
     });
 
     describe("(columns)", function() {
-      var element,
-        content;
+      var element, content;
 
       var setupDirectiveWithNColumns = function (n) {
         var $scope = $rootScope.$new();
@@ -375,16 +365,62 @@ describe("ngjs-color-picker", function() {
   describe("with multiple custom options", function () {
     describe("with prioritizes", function () {
       it("has custom colors as prio 1", function () {
-        // TODO
+        var $scope = $rootScope.$new();
+        $scope.customColors = [
+          'rgb(27, 209, 72)',
+          'rgb(20, 132, 237)',
+          'rgb(161, 189, 252)',
+          'rgb(22, 214, 219)',
+          'rgb(26, 231, 191)',
+          'rgb(17, 183, 73)'
+        ];
+
+        $scope.options = {
+          randomColors: 10
+        };
+
+        $scope.gradient = {
+          start: '#BA693E',
+          count: 10,
+          step: 1
+        };
+
+        var element = $compile('<ngjs-color-picker options="options" custom-colors="customColors"></ngjs-color-picker>')($scope);
+        $rootScope.$digest();
+        var content = element.contents();
+
+        var listItems = content.find('li');
+        var matches = listItems.filter(function (index, item) {
+          return item.style.backgroundColor === $scope.customColors[index];
+        });
+        expect(matches.length).toEqual(listItems.length);
       });
 
       it("has random colors as prio 2", function () {
-        // TODO
-      });
+        var $scope = $rootScope.$new();
+        $scope.options = {
+          randomColors: 10
+        };
 
-      it("has gradient colors as prio 1", function () {
-        // TODO
+        $scope.gradient = {
+          start: '#BA693E',
+          count: 10,
+          step: 1
+        };
+
+        var element = $compile('<ngjs-color-picker options="options"></ngjs-color-picker>')($scope);
+        $rootScope.$digest();
+        var content = element.contents();
+
+        // Check that first and last list elements do not match
+        // provided gradient spectre. That is good enough.
+        var listItems = content.find('li');
+        var firstListItem = listItems[0];
+        var lastListItem = listItems[listItems.length - 1];
+        expect(firstListItem.style.backgroundColor).not.toEqual('rgb(189, 108, 65)');
+        expect(lastListItem.style.backgroundColor).not.toEqual('rgb(255, 246, 203)');
       });
     });
   });
+
 });
