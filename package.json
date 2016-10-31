@@ -2,10 +2,11 @@
   "name": "ngjs-color-picker",
   "version": "1.0.5",
   "description": "A color picker with a few extra functions - for AngularJS",
-  "main": "js/ngjs-color-picker.js",
+  "main": "dist/ngjs-color-picker.js",
+  "style": "dist/ngjs-color-picker.css",
   "files": [
-    "js/ngjs-color-picker.js",
-    "css/ngjs-color-picker.css"
+    "dist",
+    "!dist/index.html"
   ],
   "repository": {
     "type": "git",

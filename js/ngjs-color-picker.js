@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('ngjsColorPicker', [])
+require('../css/ngjs-color-picker.css');
+
+angular.module('ngjsColorPicker', ['xeditable'])
     .directive('ngjsColorPicker', function() {
         var template =
             '<ul ng-style="ulCss"> \
