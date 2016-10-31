@@ -72,6 +72,8 @@ Run `npm install` and then you're able to start dev server with
 npm run serve
 ```
 
+Open up [http://localhost:8080](http://localhost:8080).
+
 The files `dev/src/app/ngjs-color-picker.js` and `dev/src/style/ngjs-color-picker.css` are symlinks to `js/ngjs-color-picker.js` and `css/ngjs-color-picker.css`, so you can edit either one of the files and the change will be shown on the dev server. 
 
 (Development server environment created using awesome [angular-webpack](https://github.com/preboot/angular-webpack))
