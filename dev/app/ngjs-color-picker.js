@@ -1,0 +1,1 @@
+../../js/ngjs-color-picker.js

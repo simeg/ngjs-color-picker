@@ -27,7 +27,7 @@ module.exports = function makeWebpackConfig () {
      * Karma will set this when it's a test build
      */
     config.entry = {
-        app: './dev/src/app/app.js'
+        app: './dev/app/app.js'
     };
 
     /**
@@ -111,7 +111,7 @@ module.exports = function makeWebpackConfig () {
     // Render index.html
     config.plugins.push(
         new HtmlWebpackPlugin({
-            template: './dev/src/public/index.html',
+            template: './dev/public/index.html',
             inject: 'body'
         })
     );
@@ -134,7 +134,7 @@ module.exports = function makeWebpackConfig () {
             // Copy assets from the public folder
             // Reference: https://github.com/kevlened/copy-webpack-plugin
             new CopyWebpackPlugin([{
-                from: __dirname + '/src/public'
+                from: __dirname + '/public'
             }])
         );
     }
@@ -145,7 +145,7 @@ module.exports = function makeWebpackConfig () {
      * Reference: http://webpack.github.io/docs/webpack-dev-server.html
      */
     config.devServer = {
-        contentBase: './dev/src/public',
+        contentBase: './dev/public',
         stats: 'minimal'
     };
 
