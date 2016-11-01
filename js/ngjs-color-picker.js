@@ -1,8 +1,6 @@
 'use strict';
 
-require('../css/ngjs-color-picker.css');
-
-angular.module('ngjsColorPicker', ['xeditable'])
+angular.module('ngjsColorPicker', [])
     .directive('ngjsColorPicker', function() {
         var template =
             '<ul ng-style="ulCss"> \
@@ -24,6 +22,80 @@ angular.module('ngjsColorPicker', ['xeditable'])
                     </li>\
                 </ul>';
 
+        var styling = [
+            {
+                selector: 'ul',
+                rules: [
+                    'padding: 0',
+                    'outline: none',
+                    'list-style-type: none'
+                ]
+            },
+            {
+                selector: 'li',
+                rules: [
+                    'padding: 0',
+                    'margin: 0',
+                    'box-sizing: border-box',
+                    'outline: none'
+                ]
+            },
+            {
+                selector: 'li.selectedColor',
+                rules: [
+                    'border: 1px solid #333'
+                ]
+            },
+            {
+                selector: 'li.hRDF',
+                rules: [
+                    'border-radius: 5px 0 0 5px'
+                ]
+            },
+            {
+                selector: 'li.hRDL',
+                rules: [
+                    'border-radius: 0 5px 5px 0'
+                ]
+            },
+            {
+                selector: 'li.vRDF',
+                rules: [
+                    'border-radius: 5px 5px 0 0'
+                ]
+            },
+            {
+                selector: 'li.vRDL',
+                rules: [
+                    'border-radius: 0 0 5px 5px'
+                ]
+            },
+            {
+                selector: 'li.tlRound',
+                rules: [
+                    'border-radius: 5px 0 0 0'
+                ]
+            },
+            {
+                selector: 'li.trRound',
+                rules: [
+                    'border-radius: 0 5px 0 0;'
+                ]
+            },
+            {
+                selector: 'li.brRound',
+                rules: [
+                    'border-radius: 0 0 5px 0;'
+                ]
+            },
+            {
+                selector: 'li.blRound',
+                rules: [
+                    'border-radius: 0 0 0 5px;'
+                ]
+            }
+        ];
+
         return {
             scope: {
                 selectedColor: '=?',
@@ -33,7 +105,7 @@ angular.module('ngjsColorPicker', ['xeditable'])
             },
             restrict: 'E',
             template: template,
-            link: function (scope) { // element, attr
+            link: function(scope) { // element, attr
 
                 var defaultColors =  [
                     '#7bd148',
@@ -183,6 +255,22 @@ angular.module('ngjsColorPicker', ['xeditable'])
                 // Set selection to chosen color or first color
                 scope.selectedColor = scope.selectedColor || scope.colors[0];
 
+                /* Append styling to DOM */
+                var getHtmlCssStyle = function(selector, rules) {
+                    var prefix = 'ngjs-color-picker';
+                    return prefix + ' ' + selector + ' {' + rules.join(';') + '}';
+                };
+
+                var applyCssToHtml = function() {
+                    var styles = styling.map(function(element) {
+                        return getHtmlCssStyle(element.selector, element.rules);
+                    });
+
+                    angular.element(document).find('head').prepend(
+                        '<style type="text/css">' + styles.join(' ') + '</style>');
+                };
+
+                applyCssToHtml();
             }
         };
 
