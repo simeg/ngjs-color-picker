@@ -36,8 +36,8 @@ describe('ngjs-color-picker', function() {
         it('has default scope variables set', function() {
             var defaultOptions = {
                 size: 20,
-                columns: 0,
-                randomColors: 0,
+                columns: null,
+                randomColors: null,
                 total: 12,
                 horizontal: true,
                 roundCorners: false
