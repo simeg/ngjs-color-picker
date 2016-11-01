@@ -1,6 +1,5 @@
 import angular from 'angular';
 require('./ngjs-color-picker');
-import '../style/ngjs-color-picker.css';
 
 class AppCtrl {
   constructor() {
