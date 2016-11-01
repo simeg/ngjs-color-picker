@@ -61,7 +61,9 @@
   },
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
+    "commit": "npm run pre-commit",
     "lint": "./node_modules/eslint/bin/eslint.js .eslintrc.yml './**/*.js'",
+    "pre-commit": "npm run lint && npm run test",
     "serve": "webpack-dev-server --history-api-fallback --inline --progress",
     "test": "./node_modules/karma/bin/karma start ./test/karma.conf.js --single-run",
     "test:watch": "./node_modules/karma/bin/karma start ./test/karma.conf.js"
