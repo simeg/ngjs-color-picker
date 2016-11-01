@@ -2,9 +2,7 @@
 
 // Modules
 var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 /**
@@ -85,20 +83,6 @@ module.exports = function makeWebpackConfig () {
             loader: 'babel',
             exclude: /node_modules/
         }, {
-            // CSS LOADER
-            // Reference: https://github.com/webpack/css-loader
-            // Allow loading css through js
-            //
-            // Reference: https://github.com/postcss/postcss-loader
-            // Postprocess your css with PostCSS plugins
-            test: /\.css$/,
-            // Reference: https://github.com/webpack/extract-text-webpack-plugin
-            // Extract css files in production builds
-            //
-            // Reference: https://github.com/webpack/style-loader
-            // Use style-loader in development.
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!postcss-loader')
-        }, {
             // ASSET LOADER
             // Reference: https://github.com/webpack/file-loader
             // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
@@ -117,23 +101,11 @@ module.exports = function makeWebpackConfig () {
     };
 
     /**
-     * PostCSS
-     * Reference: https://github.com/postcss/autoprefixer-core
-     * Add vendor prefixes to your css
-     */
-    config.postcss = [
-        autoprefixer({
-            browsers: ['last 2 version']
-        })
-    ];
-
-    /**
      * Plugins
      * Reference: http://webpack.github.io/docs/configuration.html#plugins
      * List: http://webpack.github.io/docs/list-of-plugins.html
      */
     config.plugins = [];
-
 
     // Reference: https://github.com/ampedandwired/html-webpack-plugin
     // Render index.html
@@ -141,12 +113,7 @@ module.exports = function makeWebpackConfig () {
         new HtmlWebpackPlugin({
             template: './dev/src/public/index.html',
             inject: 'body'
-        }),
-
-        // Reference: https://github.com/webpack/extract-text-webpack-plugin
-        // Extract css files
-        // Disabled when in test mode or not in build mode
-        new ExtractTextPlugin('ngjs-color-picker.css', {disable: !isProd})
+        })
     );
 
     // Add build specific plugins

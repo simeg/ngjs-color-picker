@@ -7,8 +7,7 @@
   ],
   "description": "A color picker with a few extra functions",
   "main": [
-    "./js/ngjs-color-picker.js",
-    "./css/ngjs-color-picker.css"
+    "./dist/ngjs-color-picker.js"
   ],
   "moduleType": [
     "globals"
@@ -27,7 +26,8 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "test"
+    "test",
+    "dev"
   ],
   "repository": {
     "type": "git",
