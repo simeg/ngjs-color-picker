@@ -1,1 +1,35 @@
-<ngjs-color-picker options="app.options" gradient="app.optionsGradient"></ngjs-color-picker>
+<h2>Basic usage example</h2>
+<ngjs-color-picker selected-color="app.selected"></ngjs-color-picker>
+<input type="text" ng-model="app.selected">
+<br/>
+<br/>
+
+<h2>Example with larger size and round corners</h2>
+<ngjs-color-picker selected-color="app.selectedColor" options="app.customOptions"></ngjs-color-picker>
+<input type="text" ng-model="app.selectedColor">
+<br/>
+<br/>
+
+<h2>Example with random colors</h2>
+<ngjs-color-picker selected-color="app.selectedColorRandom" options="app.optionsRandom"></ngjs-color-picker>
+<input type="text" ng-model="app.selectedColorRandom">
+<br/>
+<br/>
+
+<h2>Example with gradient</h2>
+<ngjs-color-picker selected-color="app.selectedColorGradient" gradient="app.optionsGradient"></ngjs-color-picker>
+<input type="text" ng-model="app.selectedColorGradient">
+<br/>
+<br/>
+
+<h2>Example with vertical color picker</h2>
+<ngjs-color-picker selected-color="app.selectedColorVert" options="app.optionsVertical"></ngjs-color-picker>
+<input type="text" ng-model="app.selectedColorVert">
+<br/>
+<br/>
+
+<h2>Example with columns defined</h2>
+<ngjs-color-picker selected-color="app.selectedColorColumn" options="app.optionsColumn"></ngjs-color-picker>
+<input type="text" ng-model="app.selectedColorColumn">
+<br/>
+<br/>
