@@ -37,19 +37,12 @@ grunt wiredep
 to make grunt automatically add the needed files to your `index.html`.
 
 ####manually:
-Clone or [download](https://github.com/simeg/ngjs-color-picker/archive/master.zip) the repository and include the `js` and `css` files in your app.
-
-**JS**
+Clone or [download](https://github.com/simeg/ngjs-color-picker/archive/master.zip) the repository and include the production file in your application.
 
 ``` html
-<script type="text/javascript" src="js/ngjs-color-picker"></script>
+<script type="text/javascript" src="dist/ngjs-color-picker.js"></script>
 ```
 
-**CSS**
-
-``` html
-<link rel="stylesheet" href="css/ngjs-color-picker.css" />
-```
 
 Inject the directive as a dependency in your app:
 
@@ -72,15 +65,15 @@ Run `npm install` and then you're able to start dev server with
 npm run serve
 ```
 
-Open up [http://localhost:8080](http://localhost:8080).
+The server is then available at [http://localhost:8080](http://localhost:8080).
 
-The files `dev/src/app/ngjs-color-picker.js` and `dev/src/style/ngjs-color-picker.css` are symlinks to `js/ngjs-color-picker.js` and `css/ngjs-color-picker.css`, so you can edit either one of the files and the change will be shown on the dev server. 
+The file `dev/app/ngjs-color-picker.js` is a symlink to `js/ngjs-color-picker.js`, so you can edit either one of them and the change will be shown on the dev server. 
 
-(Development server environment created using awesome [angular-webpack](https://github.com/preboot/angular-webpack))
+(Development server environment created using awesome [angular-webpack](https://github.com/preboot/angular-webpack)).
 
 # TODO
+* **See [issues](https://github.com/simeg/ngjs-color-picker/issues)**
 * Click (or something) to get the hex-code for the color (rgb should also be available)
 * Add reverse option for gradient
 * Include color themes (Good palettes: http://jsfiddle.net/nicgirault/bqph3pkL/)
 * Add option to select rows instead of columns
-* See [issues](https://github.com/simeg/ngjs-color-picker/issues)
