@@ -1,8 +1,4 @@
-ngjs-color-picker
-=================
-
-[![Build Status](https://travis-ci.org/simeg/ngjs-color-picker.svg?branch=master)](https://travis-ci.org/simeg/ngjs-color-picker)
-[![npm](https://img.shields.io/npm/dm/ngjs-color-picker.svg)](https://npmjs.org/package/ngjs-color-picker)
+# ngjs-color-picker [![npm](https://img.shields.io/npm/dm/ngjs-color-picker.svg)](https://npmjs.org/package/ngjs-color-picker) [![Build Status](https://travis-ci.org/simeg/ngjs-color-picker.svg?branch=master)](https://travis-ci.org/simeg/ngjs-color-picker) 
 
 A small directive which essentially is a color picker but with a few extra functions - for AngularJS. Based on [ng-color-picker](https://github.com/joujiahe/ng-color-picker).
 
