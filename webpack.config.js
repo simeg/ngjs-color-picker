@@ -27,7 +27,7 @@ module.exports = function makeWebpackConfig () {
      * Karma will set this when it's a test build
      */
     config.entry = {
-        app: './dev/app/app.js'
+        app: isProd ? './source/ngjs-color-picker.js' : './dev/app/app.js'
     };
 
     /**
