@@ -2,6 +2,7 @@
 
 // Modules
 var webpack = require('webpack');
+var nodeExternals = require('webpack-node-externals');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -148,6 +149,11 @@ module.exports = function makeWebpackConfig () {
         contentBase: './dev/public',
         stats: 'minimal'
     };
+
+    // Ignore modules in node_modules
+    if (isProd) {
+        config.externals = [nodeExternals()];
+    }
 
     return config;
 }();
