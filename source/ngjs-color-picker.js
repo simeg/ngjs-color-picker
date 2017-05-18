@@ -251,7 +251,6 @@ angular.module('ngjsColorPicker', [])
         return {
             scope: {
                 selectedColor: '=?',
-                customColors: '=?',
                 options: '=?',
                 gradient: '=?'
             },
