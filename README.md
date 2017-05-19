@@ -14,12 +14,12 @@ A small directive which essentially is a color picker but with a few extra funct
 - [Plunker](http://embed.plnkr.co/INXf3efkYeP1gWaF9SId/preview)
 
 # Installation
-####via npm:
+### npm:
 ``` bash
 npm install --save ngjs-color-picker
 ```
 
-####via bower:
+### bower:
 ``` bash
 bower install --save ngjs-color-picker
 ```
@@ -32,7 +32,7 @@ grunt wiredep
  
 to make grunt automatically add the needed files to your `index.html`.
 
-####manually:
+### manually:
 Clone or [download](https://github.com/simeg/ngjs-color-picker/archive/master.zip) the repository and include the production file in your application.
 
 ``` html
