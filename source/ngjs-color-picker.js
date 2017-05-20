@@ -143,8 +143,8 @@ angular.module('ngjsColorPicker', [])
         };
 
         var setColors = function(scope) {
-            if (!!scope.customColors) {
-                scope.colors = scope.customColors;
+            if (!!scope.options.customColors) {
+                scope.colors = scope.options.customColors;
             } else if (scope.options && !!scope.options.randomColors) {
                 if (scope.options.randomColors > 0) {
                     scope.colors = [];
@@ -251,7 +251,6 @@ angular.module('ngjsColorPicker', [])
         return {
             scope: {
                 selectedColor: '=?',
-                customColors: '=?',
                 options: '=?',
                 gradient: '=?'
             },
