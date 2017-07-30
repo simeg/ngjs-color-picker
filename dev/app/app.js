@@ -1,5 +1,5 @@
 import angular from 'angular';
-require('./ngjs-color-picker');
+require('../../source/ngjs-color-picker.js');
 
 class AppCtrl {
     constructor() {
