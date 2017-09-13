@@ -14,31 +14,30 @@ A small directive which essentially is a color picker but with a few extra funct
 - [Plunker](http://embed.plnkr.co/INXf3efkYeP1gWaF9SId/preview)
 
 # Installation
-### npm:
+## npm:
 ``` bash
 npm install --save ngjs-color-picker
 ```
 
-### bower:
+## bower:
 ``` bash
 bower install --save ngjs-color-picker
 ```
 
 You may have to run
 
- ``` bash
+``` bash
 grunt wiredep
- ```
+```
  
 to make grunt automatically add the needed files to your `index.html`.
 
-### manually:
+## Manually:
 Clone or [download](https://github.com/simeg/ngjs-color-picker/archive/master.zip) the repository and include the production file in your application.
 
 ``` html
 <script type="text/javascript" src="dist/ngjs-color-picker.js"></script>
 ```
-
 
 Inject the directive as a dependency in your app:
 
@@ -55,7 +54,7 @@ For documentation, examples and usage see the [GitHub page for this repository](
 3. Gradient
 4. Default colors
 
-# Contribute :octocat: :raised_hands:
+# Contribute :raised_hands:
 Run `npm install` and then you're able to start dev server with
 ``` bash
 npm run serve
