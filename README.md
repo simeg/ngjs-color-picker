@@ -19,17 +19,12 @@ A small directive which essentially is a color picker but with a few extra funct
 npm install --save ngjs-color-picker
 ```
 
-## bower:
-``` bash
-bower install --save ngjs-color-picker
-```
-
 You may have to run
 
 ``` bash
 grunt wiredep
 ```
- 
+
 to make grunt automatically add the needed files to your `index.html`.
 
 ## Manually:
@@ -62,7 +57,7 @@ npm run serve
 
 The server is then available at [http://localhost:8080](http://localhost:8080).
 
-The file `dev/app/ngjs-color-picker.js` is a symlink to `source/ngjs-color-picker.js`, so you can edit either one of them and the change will be shown on the dev server. 
+The file `dev/app/ngjs-color-picker.js` is a symlink to `source/ngjs-color-picker.js`, so you can edit either one of them and the change will be shown on the dev server.
 
 (Development server environment created using awesome [angular-webpack](https://github.com/preboot/angular-webpack)).
 
