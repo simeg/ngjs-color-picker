@@ -4,6 +4,8 @@ A small directive which essentially is a color picker but with a few extra funct
 
 **Requirements**: Angular 1.2+
 
+![Screenshot](assets/screenshot.png)
+
 # Features
 - Customize the appearance of the color picker (vertical, horizontal, columns etc.)
 - Generate random colors
